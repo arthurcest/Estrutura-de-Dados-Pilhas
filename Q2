@@ -1,0 +1,12 @@
+pilha_ex2 = []
+pilha_ex2.append(3)
+pilha_ex2.append(4)
+pilha_ex2.pop()
+pilha_ex2.append(5)
+pilha_ex2.append(6)
+pilha_ex2.pop()
+pilha_ex2.append(7)
+pilha_ex2.append(8)
+
+print("a) Elementos da pilha:", pilha_ex2)
+print("b) Somente os valores pares:", [x for x in pilha_ex2 if x % 2 == 0])
