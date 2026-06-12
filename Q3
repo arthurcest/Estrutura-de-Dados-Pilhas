@@ -1,0 +1,8 @@
+def inverter_string(texto):
+    pilha = list(texto)
+    texto_invertido = ""
+    while len(pilha) > 0:
+        texto_invertido += pilha.pop()
+    return texto_invertido
+
+print(f"Inversão de 'python': {inverter_string('python')}")
