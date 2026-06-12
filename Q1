@@ -1,0 +1,9 @@
+pilha_ex1 = []
+pilha_ex1.append(1) # a)
+pilha_ex1.append(2) # b)
+pilha_ex1.pop()     # c) retira o 2
+pilha_ex1.append(3) # d)
+pilha_ex1.append(4) # e)
+pilha_ex1.pop()     # f) retira o 4
+pilha_ex1.pop()     # g) retira o 3
+pilha_ex1.pop()     # h) retira o 1
