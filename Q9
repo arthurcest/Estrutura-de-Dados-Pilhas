@@ -1,0 +1,15 @@
+def fatorial_pilha(n):
+    pilha = []
+    
+    # Simula a descida da recursão (push dos estados)
+    for i in range(n, 0, -1):
+        pilha.append(i)
+        
+    resultado = 1
+    # Simula o retorno da recursão (pop e cálculo)
+    while len(pilha) > 0:
+        resultado *= pilha.pop()
+        
+    return resultado
+
+print(f"O Fatorial de 5 é: {fatorial_pilha(5)}")
