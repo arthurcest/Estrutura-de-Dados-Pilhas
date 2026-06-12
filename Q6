@@ -1,0 +1,11 @@
+def imprimir_inverso_pilha(lista):
+    pilha = []
+    for elemento in lista:
+        pilha.append(elemento)
+        
+    while len(pilha) > 0:
+        print(pilha.pop(), end=" ")
+    print()
+
+print("Lista invertida:")
+imprimir_inverso_pilha([1, 2, 3, 4])
