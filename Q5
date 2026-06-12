@@ -1,0 +1,16 @@
+def decimal_para_binario(numero):
+    pilha_restos = []
+    if numero == 0:
+        return "0"
+        
+    while numero > 0:
+        pilha_restos.append(str(numero % 2))
+        numero = numero // 2
+        
+    binario = ""
+    while len(pilha_restos) > 0:
+        binario += pilha_restos.pop()
+        
+    return binario
+
+print(f"O número 13 em binário é: {decimal_para_binario(13)}")
