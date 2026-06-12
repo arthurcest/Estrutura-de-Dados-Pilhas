@@ -1,0 +1,26 @@
+def mesclar_para_decrescente(pilha1, pilha2):
+    pilha_resultado = []
+    
+    # As pilhas estão ordenadas crescentemente do topo para a base.
+    # O topo possui sempre o menor valor restante.
+    while len(pilha1) > 0 and len(pilha2) > 0:
+        if pilha1[-1] < pilha2[-1]:
+            pilha_resultado.append(pilha1.pop())
+        else:
+            pilha_resultado.append(pilha2.pop())
+            
+    # Transferir os elementos que sobrarem
+    while len(pilha1) > 0:
+        pilha_resultado.append(pilha1.pop())
+    while len(pilha2) > 0:
+        pilha_resultado.append(pilha2.pop())
+        
+    # Ao colocar o menor a cada iteração, os maiores ficam para o fim.
+    # Como o append insere no topo, o MAIOR valor ficará no TOPO (ordem decrescente a partir do topo).
+    return pilha_resultado
+
+# Exemplo de teste (o final da lista simula o topo da pilha):
+p1 = [5, 3, 1] # 1 é o menor no topo
+p2 = [6, 4, 2] # 2 é o menor no topo
+print(f"Pilha mesclada (maior no topo): {mesclar_para_decrescente(p1, p2)}") 
+# Saída: [1, 2, 3, 4, 5, 6] onde 6 será o topo.
