@@ -1,0 +1,6 @@
+def verifica_palindromo(palavra):
+    # A utilizar a função do exercício anterior
+    return palavra == inverter_string(palavra)
+
+print(f"A palavra 'radar' é palíndromo? {verifica_palindromo('radar')}")
+print(f"A palavra 'casa' é palíndromo? {verifica_palindromo('casa')}")
