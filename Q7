@@ -1,0 +1,35 @@
+class Navegador:
+    def __init__(self):
+        self.historico = [] # Pilha Undo
+        self.futuro = []    # Pilha Redo
+        self.pagina_atual = None
+
+    def visitar(self, url):
+        if self.pagina_atual is not None:
+            self.historico.append(self.pagina_atual)
+        self.pagina_atual = url
+        self.futuro.clear() # Limpa o Redo ao visitar uma nova página
+        print(f"Visitou: {self.pagina_atual}")
+
+    def voltar(self):
+        if len(self.historico) > 0:
+            self.futuro.append(self.pagina_atual)
+            self.pagina_atual = self.historico.pop()
+            print(f"Voltou para: {self.pagina_atual}")
+        else:
+            print("Não há histórico para voltar.")
+
+    def avancar(self):
+        if len(self.futuro) > 0:
+            self.historico.append(self.pagina_atual)
+            self.pagina_atual = self.futuro.pop()
+            print(f"Avançou para: {self.pagina_atual}")
+        else:
+            print("Não há páginas para avançar.")
+
+# Teste
+nav = Navegador()
+nav.visitar("google.com")
+nav.visitar("youtube.com")
+nav.voltar()
+nav.avancar()
