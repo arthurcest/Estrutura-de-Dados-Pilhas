@@ -1,0 +1,13 @@
+def ordenar_pilha(pilha):
+    pilha_aux = []
+    while len(pilha) > 0:
+        temp = pilha.pop()
+        # Move elementos maiores da pilha auxiliar de volta para a principal
+        while len(pilha_aux) > 0 and pilha_aux[-1] > temp:
+            pilha.append(pilha_aux.pop())
+        pilha_aux.append(temp)
+    return pilha_aux
+
+pilha_entrada = [4, 1, 3, 2]
+pilha_ordenada = ordenar_pilha(pilha_entrada)
+print(f"Pilha Ordenada (menor no topo): {pilha_ordenada}") # Saída: [1, 2, 3, 4]
